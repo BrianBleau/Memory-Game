@@ -8,6 +8,7 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .page {
@@ -17,7 +18,57 @@ body {
   display: flex;
   flex-direction: column;
   flex-flow: row;
-  background-color: maroon;
+  background-color: white;
+}
+
+.popup {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+}
+
+.popup-inner {
+  position: fixed;
+  top: 15%;
+  left: 25%;
+  width: 600px;
+  height: 400px;
+  background-color: whitesmoke;
+  border-radius: 12px;
+  display: flex;
+  justify-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup-text {
+  font-size: 48px;
+  text-align: center;
+  top: auto;
+}
+
+form {
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+}
+
+.name-input {
+  height: 60px;
+  width: 300px;
+  font-size: 48px;
+}
+
+.name-button {
+  height: 48px;
+  width: 96px;
+  border-radius: 12px;
+  margin: 16px;
+  align-self: center;
 }
 
 .board {
@@ -33,7 +84,7 @@ body {
 .card {
   background-color: transparent;
   height: 180px;
-  width: 150px;
+  width: 140px;
   border-radius: 8px;
   margin: 5px;
   perspective: 1000px;
@@ -47,9 +98,10 @@ body {
   position: relative;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  box-shadow: 6px 5px 5px black;
 }
 
-.front {
+.back {
   background-color: green;
   position: absolute;
   height: 100%;
@@ -57,7 +109,7 @@ body {
   border-radius: 8px;
 }
 
-.back {
+.front {
   background-color: blue;
   position: absolute;
   height: 100%;
@@ -68,7 +120,7 @@ body {
 
 img {
   height: 180px;
-  width: 150px;
+  width: 140px;
   border-radius: 8px;
 }
 
@@ -87,23 +139,35 @@ img {
   height: 100%;
   display: flex;
   flex-flow: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  font-size: 32px;
+  color: green;
+  text-align: center;
+  flex-wrap: wrap;
 }
 
 .name-display {
-  font-size: 64px;
-  color: white;
+  color: green;
+  height: 25%;
   text-align: center;
+}
+
+.player-high {
+  height: 25%;
 }
 
 .highscore-display {
-  font-size: 64px;
-  color: white;
+  color: green;
   text-align: center;
+  height: 35%;
 }
 
 .clock-display {
-  font-size: 64px;
-  color: white;
+  color: green;
   text-align: center;
+  height: 15%;
+}
+
+.hidden {
+  display: none;
 }
